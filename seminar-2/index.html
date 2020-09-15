@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ЯИП | 2 Основы JavaScript</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../shower/themes/material/styles/styles.css" />
+    <style>
+      .shower {
+        --color-key: rgb(248, 216, 88);
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>2 Основы JavaScript</h1>
+      <p>Кирилл Кучеров</p>
+    </header>
+
+    <section class="slide">
+      <h2 class="shout shrink">Основы JavaScript</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Сток, исток затвор</h2>
+      <div class="center">
+        <img alt="1" height="350" src="img/1.jpeg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>1993 - расклад</h2>
+      <ul>
+        <li class="next">
+          Netscape становится очень популярным и может что-то менять глобально
+        </li>
+        <li class="next">
+          Чтобы страницы стали реагировать на пользователя, нужен новый язык,
+          который:
+          <ul>
+            <li class="next">будет работать в браузере</li>
+            <li class="next">сам будет управлять памятью</li>
+            <li class="next">
+              будет <strong>ОЧЕНЬ простым</strong> для
+              <strong>ОЧЕНЬ простых задач</strong>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">JavaScript 101</h2>
+    </section>
+
+    <section class="slide">
+      <div class="center">
+        <img alt="2" height="500" src="img/2.jpeg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Материалы</h2>
+      <p>
+        <a href="https://learn.javascript.ru/">learn.javascript.ru</a>
+      </p>
+      <p>
+        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">MDN</a>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Краткая история</h2>
+      <div class="center">
+        <img alt="3" width="700" src="img/3.jpeg" />
+      </div>
+    </section>
+
+    <section class="slide center">
+      <img alt="4" width="700" src="img/4.jpeg" />
+    </section>
+
+    <section class="slide">
+      <h2>JS</h2>
+      <ul>
+        <li class="next">интерпретируемый</li>
+        <li class="next">динамическая типизация</li>
+        <li class="next">утиная типизация</li>
+        <li class="next">чем одно отличается от другого?</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Переменные</h2>
+      <ul>
+        <li class="next">
+          <code>var</code>
+        </li>
+        <li class="next">
+          <code>let</code>
+        </li>
+        <li class="next">
+          <code>const</code>
+        </li>
+        <li class="next">
+          Чем <code>let</code> отличается от <code>const</code>
+        </li>
+      </ul>
+      <strong class="next"
+        >НИКОГДА не используйте <code>var</code>. Вообще. Серьезно.</strong
+      ><br />
+      <strong class="next"
+        >Всегда используйте <code>const</code>, если не получается (пример -
+        цикл for) - <code>let</code>.</strong
+      >
+    </section>
+
+    <section class="slide">
+      <h2>Разберем сложный пример</h2>
+      <pre>
+            <code>
+function foo(max) {
+    for (var i = 0; i < max; i++) {
+        setTimeout(function() {console.log(i + 1)}, i * 1000);
+    }
+}
+
+foo(3);
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Починим</h2>
+      <pre>
+              <code>
+function foo(max) {
+    for (<strong>let</strong> i = 0; i < max; i++) {
+        setTimeout(function() {console.log(i + 1)}, i * 1000);
+    }
+}
+
+foo(3);
+              </code>
+          </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Всплытие функций</h2>
+      <pre>
+              <code>
+foo();
+
+function foo() {}
+              </code>
+          </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Всплытие переменных</h2>
+      <pre>
+            <code>
+console.log(v); // ???
+var v = 345;
+console.log(v); // ???
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Почему работает</h2>
+      <ul>
+        <li class="next">
+          глобальный объект, в браузере - <code>window</code>
+        </li>
+        <li class="next">
+          интерпретатор идет по коду два раза, в первый собирает все в
+          <code>window</code>, во второй - исполняет
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Типы данных</h2>
+      <ul>
+        <li class="next">Number</li>
+        <li class="next">String</li>
+        <li class="next">Boolean</li>
+        <li class="next">null</li>
+        <li class="next">undefined</li>
+        <li class="next">Object</li>
+        <li class="next">Symbol*</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Number</h2>
+      <code>const a = 10;</code><br />
+      <code>const b = 5.5;</code><br />
+      <code>typeof a === typeof b; // ???</code><br />
+      <strong class="next">Числа только с плавающей точкой</strong>
+    </section>
+
+    <section class="slide">
+      <code>typeof typeof a; // ???</code>
+    </section>
+
+    <section class="slide">
+      <h2>String</h2>
+      <code>const s1 = 'string';</code><br />
+      <code class="next">const s2 = "string";</code><br />
+      <code class="next">const s3 = `${a} + ${b} = ${a + b}`;</code><br />
+      <strong class="next"
+        >Нет отдельного типа для одного символа (типа char)</strong
+      >
+    </section>
+
+    <section class="slide">
+      <code class="next">console.log(parseInt('100500'));</code><br />
+      <code class="next">console.log(parseFloat('100.500'));</code><br />
+      <code class="next">console.log(parseInt('10e5'));</code><br />
+      <code class="next">+'199';</code><br />
+      <code class="next">+'-1.99';</code><br />
+      <code class="next">+'1e4';</code><br />
+      <code class="next">Number('1e4');</code><br />
+      <code class="next">+'45jjf'; // NaN, parseInt('45jjf') => 45 !!!</code
+      ><br />
+      <code class="next">+'jjf34'; // NaN</code>
+    </section>
+
+    <section class="slide">
+      <code>typeof NaN; // ???</code><br />
+      <code class="next">parseInt(parseInt); // ???</code>
+    </section>
+
+    <section class="slide">
+      <h2>Boolean</h2>
+      <code>const b1 = true || false;</code><br />
+      <code class="next">console.log(!!a);</code><br />
+      <code class="next">console.log(!!0);</code><br />
+      <code class="next">console.log(!!'');</code><br />
+      <code class="next">console.log(!!null);</code><br />
+      <code class="next">console.log(!!undefined);</code><br />
+    </section>
+
+    <section class="slide">
+      <h2>null и undefined</h2>
+      <img alt="5" src="img/5.png" />
+    </section>
+
+    <section class="slide">
+      <h2>Объекты</h2>
+      <ul>
+        <li class="next">Контейнер для пар ключ-значение</li>
+        <li class="next">
+          Что угодно объект. Даже числа, строки и т.п.
+          <strong>НЕ сами по себе, у них есть обертки</strong>
+        </li>
+      </ul>
+      <pre class="next">
+            <code>
+const obj = {a: 10, 'b c': 11};
+console.log(obj.a);
+console.log(obj['b c']);
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <pre>
+            <code>
+console.log(obj.foo);
+
+obj.bar = 10;
+delete obj.bar;
+console.log(obj.bar);
+
+obj.baz = function baz() {console.log('Hello')};
+obj.baz();
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Function - first class object</h2>
+      <pre class="next">
+            <code>
+function foo() {
+    console.log('hello');
+}
+
+const bar = foo;
+bar();
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Отдохнем?</h2>
+      <div class="center">
+        <img alt="6" width="630" src="img/6.jpeg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>DOM, BOM</h2>
+      <div class="center">
+        <img alt="7" src="img/7.svg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">3 лаба???</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">4 лаба - как делать красиво???</h2>
+    </section>
+
+    <section class="slide">
+      <h2>На сладкое - преобразования типов</h2>
+      <div class="center">
+        <img alt="8" src="img/8.jpeg" />
+      </div>
+    </section>
+
+    <section class="slide center">
+      <img alt="9" height="600" src="img/9.jpeg" />
+    </section>
+
+    <section class="slide">
+      <h2>WAT?</h2>
+      <div class="center">
+        <video
+          height="350"
+          src="https://destroyallsoftware-talks.s3.amazonaws.com/wat.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ%2F20200915%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200915T083450Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=5ba118c704d4b1c881f09015f2c9aa50da332564b86742ad2a50ca8d347b612c"
+          controls
+        ></video>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Спасибо за внимание!</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="../shower/shower.js"></script>
+  </body>
+</html>
