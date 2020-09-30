@@ -3,3 +3,7 @@
 node_modules/
 .env
 .DS_Store
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
