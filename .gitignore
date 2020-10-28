@@ -7,3 +7,4 @@ node_modules/
 */.ipynb_checkpoints/*
 profile_default/
 ipython_config.py
+tmp/
