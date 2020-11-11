@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ЯИП | 6 Основы Ruby on Rails</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../shower/themes/material/styles/styles.css" />
+    <style>
+      .shower {
+        --color-key: rgb(239, 83, 80);
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>6 Основы Ruby on Rails</h1>
+      <p>Кирилл Кучеров</p>
+    </header>
+
+    <section class="slide">
+      <h2 class="shout shrink">Основы Ruby on Rails</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Как все работает в вебе - если вы забыли</h2>
+      <ul>
+        <li class="next">
+          Клиент - запрашивает информацию. <strong>Всегда</strong> является
+          инициатором
+        </li>
+        <li class="next">Сервер - отвечает на запрос</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Как все работает в вебе - если вы забыли (1)</h2>
+      <ul>
+        <li class="next">Клиент - это браузер</li>
+        <li class="next">Клиент - это мобильное приложение</li>
+        <li class="next">Клиент - это консольная программа</li>
+        <li class="next">Клиент - это веб-сервис</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Как все работает в вебе - если вы забыли (2) Новый файл.txt</h2>
+      <ul>
+        <li class="next">
+          Сервер - это компьютер, на который все ходят за контентом
+        </li>
+        <li class="next">
+          Сервер - это программа, которая установлена на таком компьютере и
+          умеет отдавать контент
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Контент</h2>
+      <ul>
+        <li class="next">Контент - это данные</li>
+        <li class="next">
+          Контент можно делить по "сущностям предметной области" - тогда это
+          будут ресурсы
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Простой пример - скачать фото. Контент статический</h2>
+      <div class="center">
+        <img alt="2" height="300" src="img/1.jpg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>
+        Сложный пример - зайти на страницу пользователя. Контент динамический
+      </h2>
+      <div class="center">
+        <img alt="2" width="900" height="300" src="img/2.png" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>CGI</h2>
+      <code>
+        #!/usr/bin/ruby <br />
+        puts "HTTP/1.0 200 OK" <br />
+        puts "Content-type: text/html\n\n" <br />
+        puts "&lt;html&gt;&lt;body&gt;This is a test&lt;/body&gt;&lt;/html&gt;"
+      </code>
+    </section>
+
+    <section class="slide">
+      <h2>Rack</h2>
+      <code>
+        class HelloWorld <br />
+        def call (env) <br />
+        [200, {"Content-Type" => "text/html; charset=utf-8"}, ["Hello World"]]
+        <br />
+        end <br />
+        end
+      </code>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Ruby on Rails - MVC фреймворк над Rack и CGI</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Фреймворк</h2>
+      <ul>
+        <li class="next">Написанная за вас абстракция</li>
+        <li class="next">Каркас для разработки</li>
+        <li class="next">
+          Имеет встроенные средства для работы с HTML и базами данных
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>MVC</h2>
+      <ul>
+        <li class="next">Модель (Model) - для данных и логики*</li>
+        <li class="next">
+          Представление (View) - в нашем случае шаблонизатор HTML
+        </li>
+        <li class="next">
+          Контроллер (Controller) - связующее звено, которое берет информацию из
+          нужных моделей и передает в представление
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Практика</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Спасибо за внимание!</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="../shower/shower.js"></script>
+  </body>
+</html>

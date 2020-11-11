@@ -1,0 +1,11 @@
+<h1>Результат</h1>
+
+<% if @error %>
+    <p><%= @error %></p>
+<% else %>
+    <ul>
+        <% @result.each do |r| %>
+            <li><%= r %></li>
+        <% end %>
+    </ul>
+<% end %>
