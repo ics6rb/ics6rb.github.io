@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    attributes:
+      link:
+        url: "Ссылка"
+
+  click_to_copy: "Нажмите, чтобы скопировать"
+  copied: "Скопировано"
+  invalid_url: "не является корректным URL"
+  link_added: "Мы успешно сократили Вашу ссылку"
+  link_add_error: "Невозможно сгенерировать короткую ссылку"
+  link_copied: "Ссылка скопирована"
+  link_to_root: "Вернуться на главную"
+  links_as_html: "Содержимое базы с пагинацией"
+  links_as_xml: "Содержимое базы в XML"
+  new_link: "Сократить ссылку"
+  no_url_provided: "Невозможно создать короткую ссылку - URL не передан"
+  shorten_link: "Получить сокращенную ссылку"
+  shorten_link_is: "Сокращенная ссылка"
+  your_link_is: "Исходная ссылка"

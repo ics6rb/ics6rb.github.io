@@ -1,0 +1,11 @@
+<ul>
+  <% @links.each do |link| %>
+    <li>
+      <%= link.url %> <%= link.slug %> <%= link.clicks %>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @links, theme: 'twitter-bootstrap-4' %>
+
+<%= link_to t(:link_to_root), root_url %>

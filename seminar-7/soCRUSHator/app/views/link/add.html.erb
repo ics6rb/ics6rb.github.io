@@ -1,0 +1,40 @@
+<main class="container vh-100 d-flex justify-content-center align-items-center">
+  <% if @error %>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= t :link_add_error %></h4>
+      
+      <p><%= @error %></p>
+
+      <hr/>
+
+      <%= link_to t(:link_to_root), root_url %>
+    </div>
+  <% elsif !@link.errors&.empty? %>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= t :link_add_error %></h4>
+      
+      <% @link.errors.each_entry do |field_name, error| %>
+        <p><%= field_name %> <%= error %></p>
+      <% end %>
+
+      <hr/>
+
+      <%= link_to t(:link_to_root), root_url %>
+    </div>
+  <% else %>
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h5 class="card-title"><%= t :link_added %></h5>
+
+        <p><%= t :your_link_is %>: <a href="<%= @link.url %>" target="_blank"><%= @link.url %></a></p>
+
+        <p><%= t :shorten_link_is %> <a href="<%= @shorten_link %>" target="_blank"><%= @shorten_link %></a></p>
+        <small><a class="btn-copy-to-clipboard" data-toggle="tooltip" data-placement="top" title="<%= t :copied %>" href="#" data-copy-content="<%= @shorten_link %>"><%= t :click_to_copy %></a></small>
+        
+        <hr/>
+
+        <p><%= link_to t(:link_to_root), root_url %></p>
+      </div>
+    </div>
+  <% end %>
+</main>

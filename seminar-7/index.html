@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ЯИП | 7 ORM в Ruby on Rails и не только</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../shower/themes/material/styles/styles.css" />
+    <style>
+      .shower {
+        --color-key: rgb(239, 83, 80);
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>7 ORM в Ruby on Rails и не только</h1>
+      <p>Кирилл Кучеров</p>
+    </header>
+
+    <section class="slide">
+      <h2 class="shout shrink">ORM в Ruby on Rails и не только</h2>
+    </section>
+
+    <section class="slide">
+      <h2>База данных VS СУБД</h2>
+      <ul>
+        <li class="next">
+          База данных хранит данные в каком-то формате. Грубо говоря это файл.
+        </li>
+        <li class="next">
+          СУБД - это совокупность программ, которые умеют читать БД, писать в
+          нее и делать это эффективно
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Виды СУБД</h2>
+      <ul>
+        <li class="next">Реляционные</li>
+        <li class="next">Нереляционные</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Бонус - реляционные СУБД понимают SQL</h2>
+      <small
+        ><strong>SQL</strong> - декларативный язык программирования, применяемый
+        для создания, модификации и управления данными в реляционной базе
+        данных, управляемой соответствующей системой управления базами
+        данных.</small
+      >
+    </section>
+
+    <section class="slide">
+      <h2>Зачем нужна СУБД?</h2>
+      <ul>
+        <li class="next">Надежное хранилище данных.</li>
+        <li class="next">Эффективное хранилище данных.</li>
+        <li class="next">Структурированное хранилище данных.</li>
+        <li class="next">Конкурентное хранилище данных.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>РСУБД в основном клиент-серверные</h2>
+      <ul>
+        <li class="next">PostgreSQL</li>
+        <li class="next">MySQL</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>РСУБД бывают урезанными</h2>
+      <ul>
+        <li class="next">
+          <strong>Sqlite3</strong> - бинарный файл + драйвер на С. Мало типов
+          данных, только один клиент в один момент времени.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Как работают с СУБД</h2>
+      <ul>
+        <li class="next">
+          <a href="https://github.com/ged/ruby-pg">Выбирают драйвер</a>.
+        </li>
+        <li class="next">Подключаются.</li>
+        <li class="next">Засылают SQL в виде строки.</li>
+        <li class="next">
+          (Перехватывают ошибки, разбираются с кодами ошибок).
+        </li>
+        <li class="next">Парсят результат.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>SQL-инъекции</h2>
+      <code>
+        txtUserId = getRequestString("UserId"); <br />
+        txtSQL = "SELECT * FROM users WHERE user_id = " + txtUserId;
+      </code>
+      <br />
+      <br />
+      <code class="next">
+        txtUserId = "105 OR 1=1"; <br />
+        "SELECT * FROM users WHERE user_id = 105 OR 1=1;"
+      </code>
+    </section>
+
+    <section class="slide">
+      <h2>Object-Relational Mapping</h2>
+      <p>
+        Библиотека, которая умеет превращать классы в таблицы БД, а действия над
+        классами - в SQL-операторы.
+      </p>
+      <p class="next">
+        В Ruby on Rails используется библиотека <strong>ActiveRecord</strong>.
+      </p>
+      <ul class="next">
+        <li class="next">Модель - таблица БД.</li>
+        <li class="next">
+          Статические методы модели - действия над таблицей целиком.
+        </li>
+        <li class="next">
+          Методы модели - действия над конкретной строкой таблицы.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Миграции</h2>
+      <p>
+        В SQL есть несколько подмножеств языков. Чаще всего используется Data
+        Manipulation Language (<strong>DML</strong>), но он не умеет создавать
+        таблицы на лету. Само создание/изменение таблиц - это дорогая операция,
+        поэтому ее делают однократно и заранее. В СУБД для этого используется
+        Data Definition Language (<strong>DDL</strong>).
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Миграции в ORM</h2>
+      <p>
+        Все, что мы рассмотрели ранее относилось к реализации DML с помощью ORM.
+        DDL реализован сбоку с помощью миграций.
+      </p>
+      <p>
+        <strong>Миграция</strong> - это код, который меняет состояние СУБД. Как
+        правило, схему, но иногда миграции пишут и с целью изменения данных.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Практика</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Спасибо за внимание!</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="../shower/shower.js"></script>
+  </body>
+</html>

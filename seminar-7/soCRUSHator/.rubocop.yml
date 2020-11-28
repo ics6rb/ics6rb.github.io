@@ -1,0 +1,27 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - bin/*
+    - config/initializers/secret_token.rb
+    - node_modules/**/*
+  NewCops: enable
+
+Rails:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 120
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
