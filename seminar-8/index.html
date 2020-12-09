@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ЯИП | 8 Аутентификация, авторизация, аккаунтинг</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../shower/themes/material/styles/styles.css" />
+    <style>
+      .shower {
+        --color-key: rgb(239, 83, 80);
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>8 Аутентификация, авторизация, аккаунтинг</h1>
+      <p>Кирилл Кучеров</p>
+    </header>
+
+    <section class="slide">
+      <h2 class="shout shrink">Аутентификация, авторизация, аккаунтинг</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Кто мы?</h2>
+      <div class="center">
+        <img alt="2" height="300" src="img/1.jpg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Чего мы хотим?</h2>
+      <strong>Нам нужно связать запрос с пользователем.</strong>
+      <p>
+        Мы должны понимать, что за пользователь сделал запрос, он ли это на
+        самом деле и может ли он делать этот запрос.
+      </p>
+    </section>
+
+    <section class="slide">
+      <ul>
+        <li class="next">
+          <strong>Идентификация</strong> - что за пользователь сделал запрос?
+          Ищем в базе.
+        </li>
+        <li class="next">
+          <strong>Аутентификация</strong> - это реально тот пользователь,
+          которым он представляется? Сравниваем аутентификационную информацию.
+        </li>
+        <li class="next">
+          <strong>Авторизация</strong> - а может ли пользователь делать этот
+          запрос? Проверяем права.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Отслеживание последовательности действий пользователя</h2>
+      <div class="center">
+        <img alt="2" height="300" src="img/2.jpg" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Вся информация хранится в заголовках</h2>
+      <ol>
+        <li class="next">
+          Basic-аутентификация - передаем с каждым запросом логин и пароль.
+        </li>
+        <li class="next">
+          "Классическая аутентификация" - передаем с каждым запросом куки.
+        </li>
+        <li class="next">
+          Более современные производные - JWT, token-based. По сути обмена
+          данными то же, что и 2, но лучше адаптировано под конкретные случаи.
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Basic-аутентификация</h2>
+      <code>Authorization: Basic base64(username:password)</code>
+    </section>
+
+    <section class="slide">
+      <h2>"Классическая аутентификация"</h2>
+      <strong>cookie - это заголовок!</strong>
+      <p class="next">Сервер делает</p>
+      <code class="next"
+        >Set-Cookie: lol=kek; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure;
+        HttpOnly; Domain: example.com; Path: /mypath</code
+      >
+      <p class="next">Клиент делает</p>
+      <code class="next">Cookie: lol=kek</code>
+    </section>
+
+    <section class="slide">
+      <h2>JWT и другие токены</h2>
+      <ul>
+        <li class="next">Мобилки</li>
+        <li class="next">SPA (single-page application)</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Практика</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Спасибо за внимание!</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="../shower/shower.js"></script>
+  </body>
+</html>
