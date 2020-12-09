@@ -5,3 +5,5 @@
 Материалы прошлых лет доступны [по ссылке](https://github.com/ics6rb/seminars-autumn-17/tree/master/7%20%D0%90%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%2C%20%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D0%B2%D1%81%D1%8F%D0%BA%D0%BE%D0%B5%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5).
 
 В остальном - не используем Device, смотрим на пример приложения `auth` и получаем удовольствие.
+
+Занятие дистанционное, [ссылка на запись вот](https://cloud.mail.ru/public/41zp/5a1sPMB8L) и [вот](https://cloud.mail.ru/public/5f9q/3P1anG33Z).
