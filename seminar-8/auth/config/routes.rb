@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   get 'session/login'
-  get 'session/create'
+  post 'session/create'
   get 'session/logout'
   resources :posts
   resources :users
