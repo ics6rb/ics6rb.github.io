@@ -15,5 +15,21 @@
   <%= @user.last_login_at %>
 </p>
 
+<h1>Посты пользователя</h1>
+
+<% @user.posts.each do |post| %>
+<p>
+  <strong>Title:</strong>
+  <%= post.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= post.text %>
+</p>
+
+<hr/>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
