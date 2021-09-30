@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ЯИП | 3 Функциональный стиль Ruby</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../shower/themes/material/styles/styles.css" />
+    <style>
+      .shower {
+        --color-key: rgb(239, 83, 80);
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>3 Функциональный стиль Ruby</h1>
+      <p>Кирилл Кучеров</p>
+    </header>
+
+    <section class="slide">
+      <h2 class="shout shrink">Функциональный стиль Ruby</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Материалы</h2>
+      <p>
+        <a href="https://www.ruby-lang.org/en/"
+          >ruby-lang.org - официальный сайт</a
+        >
+      </p>
+      <p>
+        <a href="https://ruby-doc.org/">Документация по методам</a>
+      </p>
+      <p>
+        <a href="https://github.com/rbenv/rbenv"
+          >Быстро установить ruby и легко менять версии</a
+        >
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby</h2>
+      <ul>
+        <li class="next">интерпретируемый</li>
+        <li class="next">динамическая типизация</li>
+        <li class="next">утиная типизация</li>
+        <li class="next"><strong>ВСЕ ЕСТЬ ОБЪЕКТ</strong></li>
+        <li class="next">
+          false - это только <code>nil</code> и <code>false</code>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby</h2>
+      <ul>
+        <li class="next">программа - текст на естетственном языке</li>
+        <li class="next">есть больше одного способа решить задачу</li>
+        <li class="next">выразительность важнее скорости</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Программа - текст на естественном языке</h2>
+      <ul>
+        <li class="next">не нужно писать return</li>
+        <li class="next">не нужно писать скобки при вызове методов</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Соглашения (1)</h2>
+      <ul>
+        <li class="next"><code>my_var</code> - просто переменная</li>
+        <li class="next"><code>@my_var</code> - атрибут объекта</li>
+        <li class="next"><code>@@my_var</code> - атрибут класса</li>
+        <li class="next"><code>My_var или MY_VAR</code> - константа</li>
+        <li class="next"><code>$global</code> - глобальная переменная</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Соглашения (2)</h2>
+      <ul>
+        <li class="next"><code>obj.method!</code> - изменит объект</li>
+        <li class="next"><code>obj.method?</code> - вернет Boolean</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Что такое блок?</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Организация кода лабораторных работ 5-7</h2>
+      <ul>
+        <li class="next">
+          <code>main.rb</code> содержит <strong>бизнес-логику</strong>
+        </li>
+        <li class="next">
+          <code>user.rb</code> содержит
+          <strong>работу с пользовательским вводом</strong>
+        </li>
+        <li class="next">
+          <code>test.rb</code> содержит <strong>тесты</strong>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Тесты - как?</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Обдумать</h2>
+      <ul>
+        <li class="next">
+          Посмотреть на аргументы функции и на возвращаемое значение
+        </li>
+        <li class="next">Выделить классы эквивалентности</li>
+        <li class="next">Выделить граничные условия</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Пример</h2>
+      <pre>
+              <code>
+def divide a, b
+  a / b
+end
+              </code>
+          </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Классы эквивалентности</h2>
+      <ul>
+        <li class="next"><code>a = 4, b = 2</code></li>
+        <li class="next"><code>a = 1, b = 2</code></li>
+        <li class="next"><code>a = 0, b = 2</code></li>
+        <li class="next"><code>a = -4, b = 2</code></li>
+        <li class="next"><code>a = -4, b = -2</code></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Граничные условия</h2>
+      <ul>
+        <li class="next"><code>a = ?, b = 0</code></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Написать</h2>
+      <ul>
+        <li class="next">
+          <a href="https://docs.seattlerb.org/minitest/">minitest</a> (по
+          умолчанию)
+        </li>
+        <li class="next">
+          <a href="https://rspec.info/">rspec</a> (надо отдельно ставить)
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>assert</h2>
+      <ul>
+        <li class="next">
+          написанная за вас проверка (пример: если не равно, кинуть исключение)
+        </li>
+        <li class="next">ASSERT ДОЛЖЕН СООТВЕТСТВОВАТЬ ПРОВЕРЯЕМОМУ УСЛОВИЮ</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Примеры</h2>
+      <ul>
+        <li class="next">
+          Плохо (сообщение об ошибке "true != false")
+          <code>assert_equal true, @obj.some_method?</code>
+        </li>
+        <li class="next">Хорошо <code>assert_true @obj.some_method?</code></li>
+        <li class="next">
+          Хорошо <code>assert_equal 'value' @obj.other_method</code>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Тесты - зачем?</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Статический анализ кода</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Что нужно использовать</h2>
+      <ul>
+        <li class="next">
+          <a href="https://github.com/rubocop/rubocop">rubocop</a> (стиль кода)
+        </li>
+        <li class="next">
+          <a href="https://github.com/troessner/reek">reek</a> (структура кода)
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Спасибо за внимание!</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="../shower/shower.js"></script>
+  </body>
+</html>
