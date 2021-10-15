@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ЯИП | 4 Регулярные выражения</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../shower/themes/material/styles/styles.css" />
+    <style>
+      .shower {
+        --color-key: rgb(239, 83, 80);
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>4 Регулярные выражения</h1>
+      <p>Кирилл Кучеров</p>
+    </header>
+
+    <section class="slide">
+      <h2 class="shout shrink">Регулярные выражения</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Что нужно делать со строками?</h2>
+      <ul>
+        <li class="next">Искать подстроку в строке.</li>
+        <li class="next">Проверять структуру строки.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Искать подстроку в строке</h2>
+      <ul>
+        <li class="next"><code>'regex' in 'I hate regex'</code>.</li>
+        <li class="next"><code>'regex' in 'I hate rEGeX'</code>.</li>
+        <li class="next">
+          <code
+            >'сколько угодно букв + любая цифра' in 'test test2 test2 8'</code
+          >.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Искать подстроку в строке</h2>
+      <ul>
+        <li class="next"><code>'regex' === 'regex'</code>.</li>
+        <li class="next">
+          <code
+            >'начинается с буквы, буква/цифра, @, буква/цифра/точка' ===
+            'kkucherov@bmstu.ru'</code
+          >.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Варианты</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Варианты?</h2>
+      <ul>
+        <li class="next">Запрограммировать самостоятельно.</li>
+        <li class="next">
+          Использовать какой-то инструмент, который принимает метаописание
+          строки — <strong>шаблон</strong>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Регулярные выражения</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Регулярные выражения</h2>
+      <ul>
+        <li class="next">
+          Движок, который принимает на вход универсальный шаблон и строку
+          текста, а затем разбирает строку по шаблону.
+        </li>
+        <li class="next">
+          Шаблон, который может содержать метасимволы, и который описывает
+          <strong>структуру строки</strong>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Материалы</h2>
+      <p>
+        <a href="https://rubular.com/">Rubular</a> — как справочник и как
+        интерактивная площадка для отладки.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Шаблоны часто пишут в символах /&nbsp;/</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Как писать шаблоны?</h2>
+      <ul>
+        <li class="next">Простро строка <code>/Hello/</code>.</li>
+        <li class="next">
+          Несколько строк на выбор <code>/Hello<strong>|</strong>Привет/</code>.
+        </li>
+        <li class="next">
+          Классы символов <code>/<strong>[Hh]</strong>/</code>.
+        </li>
+        <li class="next">
+          Именованные классы <code>/hello<strong>\d</strong>/</code>.
+        </li>
+        <li class="next">
+          Квантификаторы <code>/hello\d<strong>+</strong>/</code>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Метасимволы — имеют какое-то специальное значение</h2>
+      <ul>
+        <li class="next">Точка <code>.</code> обозначает любой символ.</li>
+        <li class="next">Дефис <code>-</code> обозначает перечисление.</li>
+        <li class="next">Пайп <code>|</code> обозначает ИЛИ.</li>
+        <li class="next">
+          Циркумфлекс <code>^</code> обозначает или начало строки, или отрицание
+          в группе.
+        </li>
+      </ul>
+      <strong class="next">СПЕЦСИМВОЛЫ НУЖНО ЭКРАНИРОВАТЬ!</strong>
+    </section>
+
+    <section class="slide">
+      <h2>Класс — множество символов</h2>
+      <ul>
+        <li class="next">Перечисление — <code>/[abcd]/</code>.</li>
+        <li class="next">Диапазон — <code>/[a<strong>-</strong>d]/</code>.</li>
+        <li class="next">
+          Все, кроме — <code>/[<strong>^</strong>a-d]/</code>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Именованные классы (1)</h2>
+      <ul>
+        <li class="next">
+          <code>/\w/</code> означает <code>/[a-zA-Z0-9_]/</code>.
+        </li>
+        <li class="next">
+          <code>/\W/</code> означает <code>/[^a-zA-Z0-9_]/</code>.
+        </li>
+        <li class="next"><code>/./</code> все, кроме перевода строки.</li>
+        <li class="next"><code>/\d/</code> означает <code>/[0-9]/</code>.</li>
+        <li class="next"><code>/\D/</code> означает <code>/[^0-9]/</code>.</li>
+        <li class="next">
+          <code>/\h/</code> означает <code>/[0-9a-fA-F]/</code>.
+        </li>
+        <li class="next">
+          <code>/\H/</code> означает <code>/[^0-9a-fA-F]/</code>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Именованные классы (2)</h2>
+      <ul>
+        <li class="next">
+          <code>/\s/</code> означает <code>/[ \t\r\n\f\v]/</code>.
+        </li>
+        <li class="next">
+          <code>/\S/</code> означает <code>/[^ \t\r\n\f\v]/</code>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Начало и конец строки</h2>
+      <ul>
+        <li class="next"><code>^</code> — начало строки.</li>
+        <li class="next"><code>$</code> — конец строки.</li>
+        <li class="next"><code>\b</code> — граница слова.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Группы</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Группы</h2>
+      <ul>
+        <li class="next">
+          Последовательности символов (шаблоны) в круглых скобках.
+        </li>
+        <li class="next">
+          Используются для определения области действия шаблона, определения
+          приоритета шаблонов и выделения подшаблонов.
+        </li>
+        <li class="next">Синтаксис — <code>(%your_pattern%)</code> .</li>
+        <li class="next">
+          Синтаксис <strong>именованных групп</strong> —
+          <code>(?&lt;%group_name%&gt;%your_pattern%)</code> .
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Задачи</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Спасибо за внимание!</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="../shower/shower.js"></script>
+  </body>
+</html>

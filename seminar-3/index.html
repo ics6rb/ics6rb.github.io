@@ -33,15 +33,15 @@
       <h2>Материалы</h2>
       <p>
         <a href="https://www.ruby-lang.org/en/"
-          >ruby-lang.org - официальный сайт</a
+          >ruby-lang.org - официальный сайт.</a
         >
       </p>
       <p>
-        <a href="https://ruby-doc.org/">Документация по методам</a>
+        <a href="https://ruby-doc.org/">Документация по методам.</a>
       </p>
       <p>
         <a href="https://github.com/rbenv/rbenv"
-          >Быстро установить ruby и легко менять версии</a
+          >Быстро установить ruby и легко менять версии.</a
         >
       </p>
     </section>
@@ -49,12 +49,12 @@
     <section class="slide">
       <h2>Ruby</h2>
       <ul>
-        <li class="next">интерпретируемый</li>
-        <li class="next">динамическая типизация</li>
-        <li class="next">утиная типизация</li>
-        <li class="next"><strong>ВСЕ ЕСТЬ ОБЪЕКТ</strong></li>
+        <li class="next">интерпретируемый;</li>
+        <li class="next">динамическая типизация;</li>
+        <li class="next">утиная типизация;</li>
+        <li class="next"><strong>ВСЕ ЕСТЬ ОБЪЕКТ</strong>;</li>
         <li class="next">
-          false - это только <code>nil</code> и <code>false</code>
+          false - это только <code>nil</code> и <code>false</code>.
         </li>
       </ul>
     </section>
@@ -62,36 +62,36 @@
     <section class="slide">
       <h2>Ruby</h2>
       <ul>
-        <li class="next">программа - текст на естетственном языке</li>
-        <li class="next">есть больше одного способа решить задачу</li>
-        <li class="next">выразительность важнее скорости</li>
+        <li class="next">программа - текст на естетственном языке;</li>
+        <li class="next">есть больше одного способа решить задачу;</li>
+        <li class="next">выразительность важнее скорости.</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>Программа - текст на естественном языке</h2>
       <ul>
-        <li class="next">не нужно писать return</li>
-        <li class="next">не нужно писать скобки при вызове методов</li>
+        <li class="next">не нужно писать return;</li>
+        <li class="next">не нужно писать скобки при вызове методов.</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>Соглашения (1)</h2>
       <ul>
-        <li class="next"><code>my_var</code> - просто переменная</li>
-        <li class="next"><code>@my_var</code> - атрибут объекта</li>
-        <li class="next"><code>@@my_var</code> - атрибут класса</li>
-        <li class="next"><code>My_var или MY_VAR</code> - константа</li>
-        <li class="next"><code>$global</code> - глобальная переменная</li>
+        <li class="next"><code>my_var</code> - просто переменная;</li>
+        <li class="next"><code>@my_var</code> - атрибут объекта;</li>
+        <li class="next"><code>@@my_var</code> - атрибут класса;</li>
+        <li class="next"><code>My_var или MY_VAR</code> - константа;</li>
+        <li class="next"><code>$global</code> - глобальная переменная.</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>Соглашения (2)</h2>
       <ul>
-        <li class="next"><code>obj.method!</code> - изменит объект</li>
-        <li class="next"><code>obj.method?</code> - вернет Boolean</li>
+        <li class="next"><code>obj.method!</code> - изменит объект;</li>
+        <li class="next"><code>obj.method?</code> - вернет Boolean.</li>
       </ul>
     </section>
 
@@ -103,14 +103,14 @@
       <h2>Организация кода лабораторных работ 5-7</h2>
       <ul>
         <li class="next">
-          <code>main.rb</code> содержит <strong>бизнес-логику</strong>
+          <code>main.rb</code> содержит <strong>бизнес-логику</strong>;
         </li>
         <li class="next">
           <code>user.rb</code> содержит
-          <strong>работу с пользовательским вводом</strong>
+          <strong>работу с пользовательским вводом</strong>;
         </li>
         <li class="next">
-          <code>test.rb</code> содержит <strong>тесты</strong>
+          <code>test.rb</code> содержит <strong>тесты</strong>.
         </li>
       </ul>
     </section>
@@ -123,10 +123,10 @@
       <h2>Обдумать</h2>
       <ul>
         <li class="next">
-          Посмотреть на аргументы функции и на возвращаемое значение
+          Посмотреть на аргументы функции и на возвращаемое значение.
         </li>
-        <li class="next">Выделить классы эквивалентности</li>
-        <li class="next">Выделить граничные условия</li>
+        <li class="next">Выделить классы эквивалентности.</li>
+        <li class="next">Выделить граничные условия.</li>
       </ul>
     </section>
 
@@ -144,18 +144,19 @@ end
     <section class="slide">
       <h2>Классы эквивалентности</h2>
       <ul>
-        <li class="next"><code>a = 4, b = 2</code></li>
-        <li class="next"><code>a = 1, b = 2</code></li>
-        <li class="next"><code>a = 0, b = 2</code></li>
-        <li class="next"><code>a = -4, b = 2</code></li>
-        <li class="next"><code>a = -4, b = -2</code></li>
+        <li class="next"><code>a = 4, b = 2</code>.</li>
+        <li class="next"><code>a = 1, b = 2</code>.</li>
+        <li class="next"><code>a = 1, b = 2.0</code>.</li>
+        <li class="next"><code>a = 0, b = 2</code>.</li>
+        <li class="next"><code>a = -4, b = 2</code>.</li>
+        <li class="next"><code>a = -4, b = -2</code>.</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>Граничные условия</h2>
       <ul>
-        <li class="next"><code>a = ?, b = 0</code></li>
+        <li class="next"><code>a = ?, b = 0</code>.</li>
       </ul>
     </section>
 
@@ -164,10 +165,10 @@ end
       <ul>
         <li class="next">
           <a href="https://docs.seattlerb.org/minitest/">minitest</a> (по
-          умолчанию)
+          умолчанию);
         </li>
         <li class="next">
-          <a href="https://rspec.info/">rspec</a> (надо отдельно ставить)
+          <a href="https://rspec.info/">rspec</a> (надо отдельно ставить).
         </li>
       </ul>
     </section>
@@ -176,9 +177,11 @@ end
       <h2>assert</h2>
       <ul>
         <li class="next">
-          написанная за вас проверка (пример: если не равно, кинуть исключение)
+          написанная за вас проверка (пример: если не равно, кинуть исключение);
         </li>
-        <li class="next">ASSERT ДОЛЖЕН СООТВЕТСТВОВАТЬ ПРОВЕРЯЕМОМУ УСЛОВИЮ</li>
+        <li class="next">
+          ASSERT ДОЛЖЕН СООТВЕТСТВОВАТЬ ПРОВЕРЯЕМОМУ УСЛОВИЮ.
+        </li>
       </ul>
     </section>
 
@@ -187,11 +190,11 @@ end
       <ul>
         <li class="next">
           Плохо (сообщение об ошибке "true != false")
-          <code>assert_equal true, @obj.some_method?</code>
+          <code>assert_equal true, @obj.some_method?</code>;
         </li>
-        <li class="next">Хорошо <code>assert_true @obj.some_method?</code></li>
+        <li class="next">Хорошо <code>assert_true @obj.some_method?</code>;</li>
         <li class="next">
-          Хорошо <code>assert_equal 'value' @obj.other_method</code>
+          Хорошо <code>assert_equal 'value' @obj.other_method</code>.
         </li>
       </ul>
     </section>
@@ -208,10 +211,10 @@ end
       <h2>Что нужно использовать</h2>
       <ul>
         <li class="next">
-          <a href="https://github.com/rubocop/rubocop">rubocop</a> (стиль кода)
+          <a href="https://github.com/rubocop/rubocop">rubocop</a> (стиль кода);
         </li>
         <li class="next">
-          <a href="https://github.com/troessner/reek">reek</a> (структура кода)
+          <a href="https://github.com/troessner/reek">reek</a> (структура кода).
         </li>
       </ul>
     </section>
